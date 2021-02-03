@@ -1,5 +1,19 @@
-<h1>Hellow Angular World</h1>
+<h1>Hello {{framework}} World</h1>
 
+<!--<p>{{ title }}</p>-->
+<!--<p><strong>{{ number - 2 }}</strong></p>-->
+<!--<p>{{ arr }}</p>-->
+<!--<p>{{ obj.a }}</p>-->
+<!--<p>{{ obj.b.c }}</p>-->
+
+<input type="text" (keyup.enter)="onInput($event)" (blur)="onBlur(myInput.value)" #myInput>
+<p><strong>{{inputValue}}</strong></p>
+
+<button (click)="clickButton()">Click me</button>
+<p><strong>{{buttonState}}</strong></p>
+
+<hr>
 <app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
+<!--<app-post></app-post>-->
+<hr>
+<app-post4></app-post4>
