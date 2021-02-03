@@ -1,22 +1,10 @@
 <h1>Hello World</h1>
 
-<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<button (click)="toggle = !toggle">Toggle</button>
 
-<!--<div [ngStyle]="{-->
-<!--    width: '200px',-->
-<!--    height: '200px',-->
-<!--    borderRadius: '5px',-->
-<!--    border: '1px solid black',-->
-<!--    background: backgroundToggle ? 'red' : 'blue'-->
-<!--}">-->
+<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<ng-template #blueP>
+    <p *ng="!toggle" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</ng-template>
 
-<!--</div>-->
 
-<!--<p [ngClass]="{red: backgroundToggle, blue: !backgroundToggle}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores blanditiis cumque dolore et eveniet harum ipsa-->
-<!--    itaque laborum minus nihil nisi non omnis provident quae quasi quibusdam, ratione rerum veniam!</p>-->
-
-<p [class.red]="backgroundToggle"
-   [class.blue]="!backgroundToggle"
->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur error, inventore. Aspernatur beatae debitis
-    distinctio esse eveniet expedita, facere ipsa itaque maiores nostrum, porro qui quis quisquam, temporibus ullam
-    veritatis!</p>
