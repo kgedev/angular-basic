@@ -2,9 +2,10 @@
 
 <button (click)="toggle = !toggle">Toggle</button>
 
-<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<ng-template #blueP>
-    <p *ng="!toggle" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</ng-template>
+<div [ngSwitch]="toggle">
+    <p *ngSwitchCase="true" class="red">Lorem ipsum.</p>
+    <p *ngSwitchCase="false" class="blue">Lorem ipsum. Lorem ipsum.</p>
+    <p *ngSwitchDefault>Lorem ipsum.</p>
+</div>
 
 
