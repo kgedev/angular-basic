@@ -1,19 +1,25 @@
-<h1>Hello {{framework}} World</h1>
+<h1>Hello World</h1>
 
-<!--<p>{{ title }}</p>-->
-<!--<p><strong>{{ number - 2 }}</strong></p>-->
-<!--<p>{{ arr }}</p>-->
-<!--<p>{{ obj.a }}</p>-->
-<!--<p>{{ obj.b.c }}</p>-->
+<!--&lt;!&ndash;<p>{{ title }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p><strong>{{ number - 2 }}</strong></p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>{{ arr }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>{{ obj.a }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>{{ obj.b.c }}</p>&ndash;&gt;-->
 
-<input type="text" (keyup.enter)="onInput($event)" (blur)="onBlur(myInput.value)" #myInput>
-<p><strong>{{inputValue}}</strong></p>
+<!--<input type="text" (keyup.enter)="onInput($event)" (blur)="onBlur(myInput.value)" #myInput>-->
+<!--<p><strong>{{inputValue}}</strong></p>-->
 
-<button (click)="clickButton()">Click me</button>
-<p><strong>{{buttonState}}</strong></p>
+<!--<button (click)="clickButton()">Click me</button>-->
+<!--<p><strong>{{buttonState}}</strong></p>-->
 
-<hr>
-<app-post></app-post>
+<!--<hr>-->
 <!--<app-post></app-post>-->
-<hr>
-<app-post4></app-post4>
+<!--&lt;!&ndash;<app-post></app-post>&ndash;&gt;-->
+<!--<hr>-->
+<!--<app-post4></app-post4>-->
+
+
+<input type="text" [(ngModel)]="title">
+<button (click)="clearTitle()">Clear</button>
+
+<p>{{title}}</p>
