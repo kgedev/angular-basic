@@ -20,5 +20,10 @@ export class AppComponent {
         {title: 'Next block', text: 'Directives & Pipes', id: 2},
     ]
 
+    updatePosts(post: Post) {
+        this.posts.unshift(post)
+        console.log('Post', post)
+    }
+
 }
 
