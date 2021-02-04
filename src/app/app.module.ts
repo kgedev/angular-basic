@@ -11,10 +11,6 @@ import {FormsModule} from '@angular/forms';
 @NgModule({
     declarations: [
         AppComponent,
-        PostComponent,
-        Post2Component,
-        Post3Component,
-        Post4Component
     ],
     imports: [
         BrowserModule,
@@ -23,5 +19,4 @@ import {FormsModule} from '@angular/forms';
     providers: [],
     bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
