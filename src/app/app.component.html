@@ -1,11 +1,16 @@
 <div class="container">
     <h1>Angular Directives</h1>
 
-    <p appStyle="red" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, omnis?</p>
+    <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
 
-    <p appStyle="blue" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, omnis?</p>
+    <div class="wrap" *appIfnot="!isVisible">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad earum harum labore quia sequi tempore voluptas!</p>
+    </div>
 
 </div>
+
+
+
+
+
 
