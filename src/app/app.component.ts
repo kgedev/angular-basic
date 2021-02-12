@@ -10,6 +10,7 @@ export class AppComponent{
     title = 'angular-basics'
     e: number = Math.E
     str = 'HeLlO wOrlD'
+    date: Date = new Date()
 
 }
 
