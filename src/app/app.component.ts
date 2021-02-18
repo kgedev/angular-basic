@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 
 export interface Post {
@@ -12,7 +12,7 @@ export interface Post {
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit{
 
     p: Promise<string> = new Promise<string>(resolve => {
         setTimeout(() => {
@@ -25,5 +25,13 @@ export class AppComponent{
             obs.next(new Date())
         }, 1000)
     })
+
+    date: Date
+
+    ngOnInit(): void {
+        this.date$.subscribe( date => {
+            this.date = date
+        })
+    }
 }
 
