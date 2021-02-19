@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {AppCounterService} from './app-counter.services.ts/AppCounterService';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 })
 
 export class AppComponent {
-
+    constructor(public appCounterService: AppCounterService) {
+    }
 }
 
