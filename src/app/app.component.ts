@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -6,7 +7,15 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
-    constructor() {}
+export class AppComponent implements OnInit {
+    form: FormGroup
+
+    ngOnInit() {
+        this.form = new FormGroup({})
+    }
+
+    submit() {
+        console.log('Form submitted: ', this.form)
+    }
 }
 
