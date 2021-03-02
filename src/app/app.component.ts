@@ -36,4 +36,23 @@ export class AppComponent implements OnInit {
 
         }
     }
+
+    setCapital() {
+        const cityMap = {
+            ru: 'Москва',
+            ua: 'Киев',
+            by: 'Минск'
+        }
+
+        const cityKey = this.form.get('address').get('country').value
+        const city = cityMap[cityKey]
+
+        this.form.patchValue({address: {city}})
+    }
+
+    addSkill() {
+        const control = new FormControl('', Validators.required);
+        // (<FormArray>this.form.get('skills')).push(control)
+        (this.form.get('skills') as FormArray).push(control)
+    }
 }
