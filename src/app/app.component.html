@@ -17,6 +17,10 @@
                     Введите корректный email
                 </small>
 
+                <small *ngIf = "form.get('email').errors.restrictedEmail">
+                    Email {{form.get('email').value}} запрещён
+                </small>
+
             </div>
 
         </div>
