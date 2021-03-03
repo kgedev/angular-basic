@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
             address: new FormGroup({
                 country: new FormControl('ru'),
                 city: new FormControl('', Validators.required)
-            })
+            }),
+            skills: new FormArray([])
         });
     }
 
@@ -33,7 +34,6 @@ export class AppComponent implements OnInit {
             const formData = {...this.form.value};
 
             console.log('Form Data', formData);
-
         }
     }
 
@@ -56,3 +56,21 @@ export class AppComponent implements OnInit {
         (this.form.get('skills') as FormArray).push(control)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
