@@ -20,7 +20,7 @@ export class TodosService {
     }
 
     fetchTodos(): Observable<Todo[]> {
-        return this.http.get<Todo[]>(this.url + '?_limit=2')
+        return this.http.get<Todo[]>(this.url + '9?_limit=2')
             .pipe(delay(500))
     }
 
@@ -34,22 +34,3 @@ export class TodosService {
         })
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
