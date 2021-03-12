@@ -26,8 +26,8 @@ export class AppComponent implements OnInit{
             .subscribe(todos => {
                 console.log('Response: ',todos)
                 this.todos = todos
-
                 this.loading = false
+
             }, error => {
                 console.log(error.message)
                 this.error = error.message
