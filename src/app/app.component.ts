@@ -8,13 +8,14 @@ import {Todo, TodosService} from './todos.service';
     styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
     todos: Todo[] = []
     todoTitle = ''
     loading = false
     error = ''
 
-    constructor(private todosService: TodosService) {}
+    constructor(private todosService: TodosService) {
+    }
 
     ngOnInit() {
         this.fetchTodos()
@@ -22,20 +23,19 @@ export class AppComponent implements OnInit{
 
     fetchTodos() {
         this.loading = true
-        this.todosService.fetchTodos()
-            .subscribe(todos => {
-                console.log('Response: ',todos)
-                this.todos = todos
-                this.loading = false
+        this.todosService.fetchTodos().subscribe(todos => {
+            console.log('Response: ', todos)
+            this.todos = todos
+            this.loading = false
 
-            }, error => {
-                console.log(error.message)
-                this.error = error.message
-            })
+        }, error => {
+            console.log(error.message)
+            this.error = error.message
+        })
     }
 
     addTodo() {
-        if(!this.todoTitle.trim()) {
+        if (!this.todoTitle.trim()) {
             return
         }
         const newTodo: Todo = {
@@ -43,26 +43,23 @@ export class AppComponent implements OnInit{
             completed: false
         }
 
-        this.todosService.addTodo(newTodo)
-            .subscribe(todo => {
-                console.log('todo: ', todo)
-                this.todos.push(todo)
-                this.todoTitle = ''
-            })
+        this.todosService.addTodo(newTodo).subscribe(todo => {
+            console.log('todo: ', todo)
+            this.todos.push(todo)
+            this.todoTitle = ''
+        })
     }
 
     removeTodo(id: number) {
-        this.todosService.removeTodo(id)
-            .subscribe(() => {
-                this.todos = this.todos.filter(t => t.id != id)
-            })
+        this.todosService.removeTodo(id).subscribe(() => {
+            this.todos = this.todos.filter(t => t.id != id)
+        })
     }
 
     completeTodo(id: number) {
-        this.todosService.completeTodo(id)
-            .subscribe(todo => {
-                this.todos.find(t => t.id === todo.id).completed = true
-                console.log(todo)
-            })
+        this.todosService.completeTodo(id).subscribe(todo => {
+            console.log(todo);
+            this.todos.find(t => t.id === todo.id).completed = true;
+        })
     }
 }
