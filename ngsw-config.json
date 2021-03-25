@@ -26,5 +26,17 @@
         ]
       }
     }
-  ]
+  ],
+    "dataGroups": [
+        {
+            "name": "sdfsafs",
+            "urls": [
+
+            ],
+            "cacheConfig": {
+                "maxSize": 0,
+                "maxAge": ""
+            }
+        }
+    ]
 }
