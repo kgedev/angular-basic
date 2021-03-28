@@ -28,7 +28,7 @@ describe('PostsComponent', () => {
     expect(component.posts.length).toBe(posts.length)
   })
 
-  it('should add new post', function() {
+  it('should add new post', () => {
     const post = {title: 'test'}
     const spy = spyOn(service, 'create').and.returnValue(of(post))
     component.add(post.title)
@@ -37,11 +37,27 @@ describe('PostsComponent', () => {
     expect(component.posts.includes(post)).toBeTruthy()
   });
 
-  it('should set message to error message', function() {
+  it('should set message to error message', () =>  {
     const error = 'Error message'
     spyOn(service, 'create').and.returnValue(throwError(error))
     component.add('Post title')
 
     expect(component.message).toBe(error)
+  });
+
+  it('should remove post if user confirms', () => {
+    const spy = spyOn(service, 'remove').and.returnValue(EMPTY)
+    spyOn(window, 'confirm').and.returnValue(true)
+    component.delete(10)
+
+    expect(spy).toHaveBeenCalledWith(10)
+  });
+
+  it('should not remove post if user doesnt confirm', function() {
+    const spy = spyOn(service, 'remove').and.returnValue(EMPTY)
+    spyOn(window, 'confirm').and.returnValue(false)
+    component.delete(10)
+
+    expect(spy).not.toHaveBeenCalled()
   });
 })
