@@ -14,7 +14,7 @@ describe('CounterComponent', () => {
     expect(component.counter).toBe(1)
   })
 
-  xit('should decrement counter by 1', () => {
+  it('should decrement counter by 1', () => {
     component.decrement()
     expect(component.counter).toBe(-1)
   })
